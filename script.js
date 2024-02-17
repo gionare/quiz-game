@@ -63,4 +63,31 @@ function endQuiz() {
   questionContainer.innerHTML = "<h2>Quiz Completed!</h2>";
   optionsContainer.innerHTML = "<p>Thank you</p>";
   submitBtn.disabled = true;
+
+  if (score === 6) {
+    displayFireworks();
+  }
+}
+
+function displayFireworks() {
+  // Create a container element for the fireworks
+  const fireworksContainer = document.createElement("div");
+  fireworksContainer.id = "fireworks-container";
+  document.body.appendChild(fireworksContainer);
+
+  // Load HTML content from fireworks.html
+  fetch("src/fireworks.html")
+    .then((response) => response.text())
+    .then((html) => {
+      fireworksContainer.innerHTML = html;
+
+      // Apply CSS styles from fireworks.css
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "src/fireworks.css";
+      document.head.appendChild(link);
+    })
+    .catch((error) => {
+      console.error("Error loading fireworks:", error);
+    });
 }

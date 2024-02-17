@@ -4,6 +4,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("src/photo-1507476691696-10da4222fb71.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #quiz-container {
